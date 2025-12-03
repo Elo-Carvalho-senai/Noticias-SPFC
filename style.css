@@ -164,3 +164,320 @@ body {
         margin-left: 15px;
     }
 }
+
+/* ================================
+   SIDEBAR SPFC
+=================================*/
+
+.sidebar {
+    width: 300px;
+    background: #ffffff;
+    padding: 20px;
+    border-left: 4px solid #c41717; /* barra vermelha SPFC */
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+/* Títulos da sidebar */
+.sidebar h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #c41717; /* Vermelho SPFC */
+    border-left: 4px solid #000; /* barra preta SPFC */
+    padding-left: 8px;
+}
+
+/* Lista não numerada – categorias */
+.sidebar ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.sidebar ul li {
+    padding: 6px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar ul li:hover {
+    color: #c41717;
+    transform: translateX(4px);
+}
+
+/* Lista numerada – notícias mais lidas */
+.sidebar ol {
+    margin-left: 18px;
+    margin-bottom: 25px;
+}
+
+.sidebar ol li {
+    padding: 6px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar ol li:hover {
+    color: #c41717;
+}
+
+/* Vídeo responsivo */
+.sidebar iframe {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Layout ao lado da grid */
+.content-with-sidebar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 25px;
+}
+
+/* Garantir que o grid ocupe o restante */
+.content-with-sidebar .news-grid {
+    flex: 1;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .content-with-sidebar {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 90%;
+        border-left: none;
+        border-top: 4px solid #c41717;
+        border-radius: 10px 10px 0 0;
+    }
+}
+
+/* ================================
+   LAYOUT DA NOTÍCIA
+================================ */
+.page-wrapper {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Conteúdo principal */
+.article-container {
+    flex: 3;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1.2;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    height: max-content;
+    position: sticky;
+    top: 20px;
+}
+
+
+/* ================================
+   ESTILO DO ARTIGO
+================================ */
+.article-container h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #c41717;
+    font-weight: 700;
+}
+
+.article-container h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.article-container h3 {
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.article-container p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.article-container img {
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Glossário */
+.article-container dt {
+    font-weight: 700;
+    color: #c41717;
+    margin-top: 10px;
+}
+
+.article-container dd {
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+
+/* ================================
+   TABELA
+================================ */
+.article-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+.article-container th,
+.article-container td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+}
+
+.article-container th {
+    background: #c41717;
+    color: white;
+}
+
+
+/* ================================
+   SIDEBAR
+================================ */
+.sidebar h3 {
+    font-size: 20px;
+    color: #c41717;
+    margin-bottom: 10px;
+}
+
+.sidebar ul,
+.sidebar ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+}
+
+.sidebar iframe {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+@media (max-width: 900px) {
+    .page-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+    }
+}
+
+/* ================================
+   FORMULÁRIO DE CONTATO
+================================ */
+.form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid #ccc;
+    margin-top: 30px;
+}
+
+.form-container h2 {
+    margin-bottom: 15px;
+    color: #c41717;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #999;
+    font-size: 15px;
+}
+
+.radio-group {
+    margin-top: 10px;
+}
+
+.radio-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.checkbox {
+    margin-top: 15px;
+}
+
+button.btn-primary {
+    background: #c41717;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button.btn-primary:hover {
+    background: #a81414;
+}
+
+/* ================================
+   TABELA DE HORÁRIOS
+================================ */
+.tabela-contato {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabela-contato th,
+.tabela-contato td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+}
+
+.tabela-contato th {
+    background: #c41717;
+    color: white;
+}

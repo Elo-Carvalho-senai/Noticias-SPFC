@@ -9,16 +9,120 @@
 </head>
 <body>
     
-    <header>
-        <nav>
-            <h1>SPFC Notícias</h1>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="noticia.html">Notícias</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
+     <header class="navbar">
+        <div class="container">
+
+            <!-- Logo -->
+            <a href="#" class="logo">SPFC</a>
+
+            <!-- Menu -->
+            <nav class="nav" aria-label="Menu principal">
+                <div class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="noticia.html">Notícias</a>
+                    <a href="contato.html">Contato</a>
+                </div>
+            </nav>
+        </div>
     </header>
+
+    <!-- TÍTULO DA PÁGINA -->
+    <section class="hero">
+        <img src="img/logo.png" alt="Logo SPFC" class="logo-hero">
+        <h1 class="hero-title">Fale Conosco</h1>
+        <p class="hero-subtitle">Entre em contato com nossa equipe de notícias</p>
+    </section>
+
+    <!-- FORMULÁRIO -->
+    <main class="container form-container">
+
+        <h2>Formulário de Contato</h2>
+
+        <form method="post" action="enviar.php" enctype="multipart/form-data">
+
+            <!-- NOME -->
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required
+            pattern="[A-Za-zÀ-ÿ ]{3,}"
+            title="Digite um nome válido com pelo menos 3 letras.">
+
+            <!-- EMAIL -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required
+            placeholder="exemplo@email.com">
+
+            <!-- TELEFONE -->
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" required
+            pattern="[0-9]{10,11}"
+            title="Digite somente números (DDD + número). Ex: 11987654321">
+
+            <!-- ASSUNTO -->
+            <label for="assunto">Assunto:</label>
+            <select id="assunto" name="assunto" required>
+                <option value="">Selecione...</option>
+                <option value="duvida">Dúvida</option>
+                <option value="elogio">Elogio</option>
+                <option value="reclamacao">Reclamação</option>
+                <option value="parceria">Parceria</option>
+            </select>
+
+            <!-- TIPO DE CONTATO (RADIO) -->
+            <label>Tipo de contato:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="tipo" value="torcedor" required> Torcedor</label>
+                <label><input type="radio" name="tipo" value="imprensa"> Imprensa</label>
+                <label><input type="radio" name="tipo" value="empresa"> Empresa</label>
+            </div>
+
+            <!-- MENSAGEM -->
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required
+            minlength="10"
+            placeholder="Digite sua mensagem..."></textarea>
+
+            <!-- ANEXO -->
+            <label for="arquivo">Enviar anexo (opcional):</label>
+            <input type="file" id="arquivo" name="arquivo" accept=".jpg,.png,.pdf,.docx">
+
+            <!-- CHECKBOX -->
+            <label class="checkbox">
+                <input type="checkbox" name="termos" required>
+                Confirmo que li e aceito os termos de uso.
+            </label>
+
+            <!-- BOTÃO -->
+            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+
+        </form>
+
+        <!-- TABELA DE HORÁRIOS -->
+        <h2 style="margin-top:40px;">Horário de Atendimento</h2>
+
+        <table class="tabela-contato">
+            <tr>
+                <th>Dia</th>
+                <th colspan="2">Horário</th>
+            </tr>
+
+            <tr>
+                <td>Segunda a Sexta</td>
+                <td>08h – 12h</td>
+                <td>14h – 18h</td>
+            </tr>
+
+            <tr>
+                <td>Sábado</td>
+                <td colspan="2">08h – 12h</td>
+            </tr>
+
+            <tr>
+                <td>Domingo e Feriados</td>
+                <td colspan="2">Fechado</td>
+            </tr>
+        </table>
+
+    </main>
 
 </body>
 </html>
